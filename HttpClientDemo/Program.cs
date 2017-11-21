@@ -16,7 +16,7 @@ namespace HttpClientDemo
 
             /*https://www.metaweather.com/api/location/44418/ */
 
-            //            httpClient.BaseAddress = new Uri("https://www.metaweather.com/api/");
+            //httpClient.BaseAddress = new Uri("https://www.metaweather.com/api/");
             httpClient.BaseAddress = new Uri("http://localhost:53944/api/");
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
