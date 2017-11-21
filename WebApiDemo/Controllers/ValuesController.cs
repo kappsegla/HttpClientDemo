@@ -13,6 +13,12 @@ namespace WebApiDemo.Controllers
         private static List<Person> persons = new List<Person> { new Person { Id=1, Name="Martin", Age=40, Height=1.85f, DriversLicense=true },
             new Person { Id=2, Name="Kalle", Age=12, Height=1.45f, DriversLicense=false } };
 
+
+        /// <summary>
+        /// Retrieves a list of all products
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">List of products</response>
         // GET api/values
         [HttpGet]
         public IEnumerable<Person> Get()
@@ -22,6 +28,8 @@ namespace WebApiDemo.Controllers
 
         // GET api/values/5
         [HttpGet("{id}", Name = "Values")]
+        [ProducesResponseType(typeof(Person), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 404)]
         public IActionResult Get(int id)
         {
             var item = persons.Where(p => p.Id == id).FirstOrDefault();
